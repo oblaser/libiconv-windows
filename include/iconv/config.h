@@ -24,8 +24,14 @@
 /* Define to 1 if // is a file system root distinct from /. */
 #undef DOUBLE_SLASH_IS_DISTINCT_ROOT
 
-/* Define as good substitute value for EILSEQ. */
-#undef EILSEQ
+// #############################################################################
+// Oliver Blaser 07.03.2023
+
+// DELETE
+///* Define as good substitute value for EILSEQ. */
+//#undef EILSEQ
+
+// #############################################################################
 
 /* Define to 1 to enable a few rarely used encodings. */
 #undef ENABLE_EXTRA
@@ -398,6 +404,12 @@
 /* Define to 1 if <wchar.h> declares mbstate_t. */
 #undef HAVE_MBSTATE_T
 
+// #############################################################################
+// Oliver Blaser 07.03.2023
+// ADD
+#define HAVE_MBSTATE_T 1
+// #############################################################################
+
 /* Define to 1 if you have the `memmove' function. */
 #undef HAVE_MEMMOVE
 
@@ -541,8 +553,20 @@
 /* Define to 1 if you have the <wchar.h> header file. */
 #undef HAVE_WCHAR_H
 
+// #############################################################################
+// Oliver Blaser 07.03.2023
+// ADD
+#define HAVE_WCHAR_H 1
+// #############################################################################
+
 /* Define if you have the 'wchar_t' type. */
 #undef HAVE_WCHAR_T
+
+// #############################################################################
+// Oliver Blaser 07.03.2023
+// ADD
+#define HAVE_WCHAR_T 1
+// #############################################################################
 
 /* Define to 1 if you have the `wcrtomb' function. */
 #undef HAVE_WCRTOMB

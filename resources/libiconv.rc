@@ -2,11 +2,13 @@
 
 // #############################################################################
 // Oliver Blaser 16.02.2023
+
 // ADD
 #define PACKAGE_VERSION_MAJOR       1
 #define PACKAGE_VERSION_MINOR       17
 #define PACKAGE_VERSION_SUBMINOR    0
 #define PACKAGE_VERSION_STRING      "1.17"
+
 // #############################################################################
 
 #include <winver.h>

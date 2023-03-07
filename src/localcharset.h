@@ -18,14 +18,28 @@
 #ifndef _LOCALCHARSET_H
 #define _LOCALCHARSET_H
 
-#if @HAVE_VISIBILITY@ && BUILDING_LIBCHARSET
-#define LIBCHARSET_DLL_EXPORTED __attribute__((__visibility__("default")))
-#elif defined _MSC_VER && BUILDING_LIBCHARSET
+// #############################################################################
+// Oliver Blaser 07.03.2023
+
+// DELETE
+//#if @HAVE_VISIBILITY@ && BUILDING_LIBCHARSET
+//#define LIBCHARSET_DLL_EXPORTED __attribute__((__visibility__("default")))
+//#elif defined _MSC_VER && BUILDING_LIBCHARSET
+//#define LIBCHARSET_DLL_EXPORTED __declspec(dllexport)
+//#else
+//#define LIBCHARSET_DLL_EXPORTED
+//#endif
+
+// ADD
+#ifdef BUILDING_LIBCHARSET
 #define LIBCHARSET_DLL_EXPORTED __declspec(dllexport)
-#else
+#elif USING_STATIC_LIBICONV
 #define LIBCHARSET_DLL_EXPORTED
+#else
+#define LIBCHARSET_DLL_EXPORTED __declspec(dllimport)
 #endif
 
+// #############################################################################
 
 #ifdef __cplusplus
 extern "C" {
