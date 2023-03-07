@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\src\relocatable.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\iconv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\resources\libiconv.rc">

@@ -1,5 +1,5 @@
 @rem    author          Oliver Blaser
-@rem    date            16.02.2023
+@rem    date            07.03.2023
 @rem    copyright       GNU LGPL-2.1 - Copyright (c) 2023 Oliver Blaser
 
 setlocal
@@ -14,6 +14,8 @@ del /f /q ..\resources\*
 @rem This is the main file of the executable and is not needed to build the DLL.
 @rem Note that it is licensed under GPL and not LGPL!
 @rem copy %ICONV_DIR%\src\iconv.c ..\src\
+
+copy %ICONV_DIR%\lib\iconv.c ..\src\
 
 copy %ICONV_DIR%\srclib\relocatable.h ..\src\
 copy %ICONV_DIR%\srclib\relocatable.c ..\src\
