@@ -31,6 +31,15 @@
 # define DARWIN7 /* Darwin 7 or newer, i.e. Mac OS X 10.3 or newer */
 #endif
 
+// #############################################################################
+// Oliver Blaser 07.03.2023
+// ADD
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable: 4996)
+#endif
+// #############################################################################
+
 #if defined _WIN32 && !defined __CYGWIN__
 # define WINDOWS_NATIVE
 # include <locale.h>
@@ -923,7 +932,18 @@ locale_charset (void)
      case the string returned by 'setlocale' doesn't specify the
      codepage.  */
   char *current_locale = setlocale (LC_CTYPE, NULL);
-  char *pdot = strrchr (current_locale, '.');
+
+// #############################################################################
+// Oliver Blaser 07.03.2023
+
+// DELETE
+//  char *pdot = strrchr (current_locale, '.');
+
+// ADD
+  char* pdot = NULL;
+  if (current_locale) pdot = strrchr (current_locale, '.');
+
+// #############################################################################
 
   if (pdot && 2 + strlen (pdot + 1) + 1 <= sizeof (buf))
     sprintf (buf, "CP%s", pdot + 1);
@@ -1157,3 +1177,11 @@ locale_charset (void)
 
   return codeset;
 }
+
+// #############################################################################
+// Oliver Blaser 07.03.2023
+// ADD
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
+// #############################################################################
