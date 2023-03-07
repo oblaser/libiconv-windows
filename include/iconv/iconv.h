@@ -20,15 +20,6 @@
 #ifndef _LIBICONV_H
 #define _LIBICONV_H
 
-// #############################################################################
-// Oliver Blaser 07.03.2023
-
-// ADD
-#include "config.h"
-#define USE_MBSTATE_T 1
-
-// #############################################################################
-
 #define _LIBICONV_VERSION 0x0111    /* version number: (major<<8) + minor */
 
 
@@ -158,8 +149,8 @@ extern LIBICONV_DLL_EXPORTED int iconv_close (iconv_t cd);
 //#if @BROKEN_WCHAR_H@
 
 // ADD
-#if USE_MBSTATE_T
-#if BROKEN_WCHAR_H
+#if 1
+#if 0
 
 // #############################################################################
 
@@ -190,7 +181,7 @@ typedef struct {
 //#if @USE_MBSTATE_T@
 
 // ADD
-#if USE_MBSTATE_T
+#if 1
 
 // #############################################################################
 
@@ -248,7 +239,7 @@ typedef void (*iconv_unicode_uc_to_mb_fallback)
 //#if @HAVE_WCHAR_T@
 
 // ADD
-#if HAVE_WCHAR_T
+#if 1
 
 // #############################################################################
 

@@ -259,9 +259,18 @@ invalid:
   return (iconv_t)(-1);
 }
 
-size_t iconv (iconv_t icd,
-              ICONV_CONST char* * inbuf, size_t *inbytesleft,
-              char* * outbuf, size_t *outbytesleft)
+// #############################################################################
+// Oliver Blaser 07.03.2023
+
+// DELETE
+//size_t iconv (iconv_t icd,
+//    ICONV_CONST char* * inbuf, size_t *inbytesleft,
+//    char* * outbuf, size_t *outbytesleft)
+
+// ADD
+size_t iconv(iconv_t icd, const char** inbuf, size_t* inbytesleft, char** outbuf, size_t* outbytesleft)
+
+// #############################################################################
 {
   conv_t cd = (conv_t) icd;
   if (inbuf == NULL || *inbuf == NULL)
