@@ -1,6 +1,6 @@
 
 @rem    author          Oliver Blaser
-@rem    date            07.03.2023
+@rem    date            08.03.2023
 @rem    copyright       GNU LGPL-2.1 - Copyright (c) 2023 Oliver Blaser
 
 setlocal
@@ -9,6 +9,7 @@ set ICONV_DIR=libiconv-1.17
 
 del /f /q ..\include\iconv\*
 del /f /q ..\src\*
+del /f /q ..\src\include\*
 del /f /q ..\resources\*
 
 
@@ -26,8 +27,8 @@ copy %ICONV_DIR%\libcharset\include\localcharset.h.build.in ..\src\localcharset.
 copy %ICONV_DIR%\windows\libiconv.rc ..\resources\
 
 copy %ICONV_DIR%\include\iconv.h.build.in ..\include\iconv\iconv.h
-copy %ICONV_DIR%\config.h.in ..\include\iconv\config.h
-copy %ICONV_DIR%\lib\*.h ..\include\iconv\
-copy %ICONV_DIR%\lib\*.def ..\include\iconv\
+copy %ICONV_DIR%\config.h.in ..\src\include\config.h
+copy %ICONV_DIR%\lib\*.h ..\src\include\
+copy %ICONV_DIR%\lib\*.def ..\src\include\
 
 endlocal
